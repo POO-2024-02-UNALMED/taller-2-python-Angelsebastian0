@@ -1,8 +1,8 @@
 class Asiento:
     def __init__(self, color, precio, registro):
-        self.color
-        self.precio
-        self.registro
+        self.color = color
+        self.precio = precio
+        self.registro = registro
 
     def camniarColor(self, color):
         while True:
@@ -13,15 +13,14 @@ class Asiento:
                 continue
 
 class Auto:
+    cantidadCreados = 0
     def __init__(self, precio, modelo, asientos, marca, motor, registro, cantidadCreados):
-        self.precio
-        self.modelo
-        self.asientos
-        self.marca
-        self.motor
-        self.registro
-        self.cantidadCreados
-
+        self.precio = precio
+        self.modelo = modelo 
+        self.asientos = asientos
+        self.marca = marca
+        self.motor = motor
+        self.registro = registro
     def cantidadAsientos(self, asientos):
         numAsientos = 0
         for i in len(asientos):
