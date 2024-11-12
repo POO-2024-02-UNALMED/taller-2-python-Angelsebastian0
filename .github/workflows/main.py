@@ -4,7 +4,7 @@ class Asiento:
         self.precio = precio
         self.registro = registro
 
-    def camniarColor(self, color):
+    def cambiarColor(self, color):
         while True:
             if color == "rojo" or color == "verde" or color == "negro" or color == "amarillo" or color == "blanco":
                 self.color = color
@@ -21,28 +21,29 @@ class Auto:
         self.marca = marca
         self.motor = motor
         self.registro = registro
-        
-    def cantidadAsientos(self, asientos):
-        numAsientos = 0
-        for i in len(asientos):
-            if asientos[i] != None:
-                numAsientos = numAsientos + 1
-        return numAsientos
+        Auto.cantidadCreados += 1
 
-    
-    def verificarIntegridad(self, motor , registro):
-        if self.motor == self.registro:
-            for i in len(self.asientos):
-                if self.asientos[i] != None:
-                    if self.asientos.registro != self.registro:
-                        return "las piezas no son originales"
         
-        return "auto original"
+    def cantidadAsientos(self):
+        numAsientos = sum(1 for asiento in self.asientos if asiento is not None)
+        return numAsientos
+        
+    
+    def verificarIntegridad(self):
+        if self.motor.registro != self.registro:
+            return "Las piezas no son originales"
+    
+        for asiento in self.asientos:
+            if asiento is not None and asiento.registro != self.registro:
+                return "Las piezas no son originales"
+
+        return "Auto original"
+        
 class Motor:
     def __init__(self, numeroCilindros, tipo, registro):
-        self.numeroCilindros
-        self.tipo
-        self.registro
+        self.numeroCilindros = numeroCilindros
+        self.tipo = tipo
+        self.registro = registro
 
     def cambiarRegistro(self, registro):
         self.registro = registro
