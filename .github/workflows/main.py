@@ -21,16 +21,19 @@ class Auto:
         self.marca = marca
         self.motor = motor
         self.registro = registro
+        
     def cantidadAsientos(self, asientos):
         numAsientos = 0
         for i in len(asientos):
-            numAsientos = numAsientos + 1
+            if asientos[i] != None:
+                numAsientos = numAsientos + 1
         return numAsientos
+
     
     def verificarIntegridad(self, motor , registro):
         if self.motor == self.registro:
             for i in len(self.asientos):
-                if self.asientos[i] != "":
+                if self.asientos[i] != None:
                     if self.asientos.registro != self.registro:
                         return "las piezas no son originales"
         
