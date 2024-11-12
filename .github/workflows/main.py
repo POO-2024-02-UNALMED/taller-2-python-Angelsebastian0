@@ -6,7 +6,7 @@ class Asiento:
 
     def camniarColor(self, color):
         while True:
-            if color == "rojo" or color == "verde" or color = "negro" or color = "amarillo" or color = "blanco":
+            if color == "rojo" or color == "verde" or color == "negro" or color == "amarillo" or color == "blanco":
                 self.color = color
                 break
             else: 
